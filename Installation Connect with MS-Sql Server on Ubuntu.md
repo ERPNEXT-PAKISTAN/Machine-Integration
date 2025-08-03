@@ -95,7 +95,9 @@ You can copy sample code from:
 - [erpnext_sql_Hikvision.py](https://github.com/ERPNEXT-PAKISTAN/Machine-Integration/blob/main/erpnext_sql_Hikvision.py)
 - [erpnext_sql_ZKT.py](https://github.com/ERPNEXT-PAKISTAN/Machine-Integration/blob/main/erpnext_sql_ZKT.py)
 
-#### Using nano to create and edit the file:
+#### Using nano to create and edit the file:   
+📄 Using nano from terminal (for non‑GUI environments):   
+If you are working without a desktop GUI, create and edit the file from the backend terminal using the following command:   
 
 ```bash
 nano erpnext_sql.py
