@@ -37,13 +37,13 @@ except FileNotFoundError:
 
 conn = pyodbc.connect(
     'DRIVER={ODBC Driver 17 for SQL Server};'
-    'SERVER=172.169.12.14\\PAYROLL;DATABASE=Hikvision;UID=sa;PWD=sa@25025'
+    'SERVER=192.168.1.20\\PAYROLL;DATABASE=Hikvision;UID=sa;PWD=sa@22022'
 )
 cursor = conn.cursor()
 
-ERPNEXT_API_KEY = '6ae942c86471e23'
-ERPNEXT_API_SECRET = 'eb10a33f31386a5'
-ERPNEXT_URL = 'http://3.134.73.213/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.add_log_based_on_employee_field'
+ERPNEXT_API_KEY = '85dfd8g92ddfd5ed45'
+ERPNEXT_API_SECRET = 'dfder4hdfdf445dd'
+ERPNEXT_URL = 'http://192.168.1.12/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.add_log_based_on_employee_field'
 
 headers = {
     "Authorization": f"token {ERPNEXT_API_KEY}:{ERPNEXT_API_SECRET}",
