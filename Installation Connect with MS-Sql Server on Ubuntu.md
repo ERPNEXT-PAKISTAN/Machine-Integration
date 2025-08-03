@@ -1,4 +1,7 @@
 <p align="center">
+  
+  <img width="427" height="118" alt="download" src="https://github.com/user-attachments/assets/b6b12445-4a2b-4f34-92c4-7819e5c491cc" />
+
   <img src="https://raw.githubusercontent.com/ERPNEXT-PAKISTAN/Machine-Integration/main/assets/logo.png" alt="ERPNext SQL Integration" width="180"/>
 </p>
 
