@@ -5,7 +5,7 @@
   <img width="222" height="65" alt="image" src="https://github.com/user-attachments/assets/5b9f66c3-4dad-45a3-9cdb-d76cb83dfb7b" />
 </p>
 
-<h1 align="center">🚀 Complete Installation & Integration Guide<br>ERPNext SQL Server Integration</h1>
+<h1 align="center">🚀 Complete Installation & Integration Guide<br>ERPNext with SQL Server Integration</h1>
 <p align="center">
   <b>Follow this step-by-step walkthrough to connect your SQL Server data with ERPNext using Python.<br>
      Below you'll find a visual overview and all required installation instructions!</b>
@@ -39,4 +39,5 @@
 
 Follow each section below for a detailed guide, including copy-paste commands!
 
+https://github.com/ERPNEXT-PAKISTAN/Machine-Integration/blob/main/Installation%20Connect%20with%20MS-Sql%20Server%20on%20Ubuntu.md
 ---
