@@ -87,11 +87,10 @@ sudo apt-get install unixodbc-dev msodbcsql17
 
 ### <img src="https://img.icons8.com/color/48/000000/code-file.png" width="28"/> Step 4: Create Python Script
 
-Create a file named `erpnext_sql.py` in your desired directory.
+Create a file named `erpnext_sql_Device1 2 3.py` in your desired directory.
 
-You can copy sample code from:
+Download Script From Here...:
 
-- [thiscodeworks.com](https://www.thiscodeworks.com/embed/66f3fc60f4dcb900149d8681)
 - [erpnext_sql_Hikvision.py](https://github.com/ERPNEXT-PAKISTAN/Machine-Integration/blob/main/erpnext_sql_Hikvision.py)
 - [erpnext_sql_ZKT.py](https://github.com/ERPNEXT-PAKISTAN/Machine-Integration/blob/main/erpnext_sql_ZKT.py)
 
