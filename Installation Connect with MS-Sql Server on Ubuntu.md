@@ -1,9 +1,8 @@
 <p align="center">
-  <img width="549" height="642" alt="image" src="https://github.com/user-attachments/assets/7a7f3f0d-6179-41f2-bc4d-93ec3affda77" />
-  <img width="264" height="191" alt="download" src="https://github.com/user-attachments/assets/b3292aa9-05dc-4c16-8b77-4145beae1e09" />
+   <img width="264" height="191" alt="download" src="https://github.com/user-attachments/assets/b3292aa9-05dc-4c16-8b77-4145beae1e09" />
   <img width="427" height="118" alt="download" src="https://github.com/user-attachments/assets/b6b12445-4a2b-4f34-92c4-7819e5c491cc" />
 
-  <img src="https://raw.githubusercontent.com/ERPNEXT-PAKISTAN/Machine-Integration/main/assets/logo.png" alt="ERPNext SQL Integration" width="180"/>
+  <img width="549" height="642" alt="image" src="https://github.com/user-attachments/assets/7a7f3f0d-6179-41f2-bc4d-93ec3affda77" alt="ERPNext SQL Integration" width="180"/>
 </p>
 
 <h1 align="center">ERPNext SQL Integration Guide</h1>
