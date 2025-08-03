@@ -93,6 +93,10 @@ Download Script From Here...:
 
 - [erpnext_sql_Hikvision.py](https://github.com/ERPNEXT-PAKISTAN/Machine-Integration/blob/main/erpnext_sql_Hikvision.py)
 - [erpnext_sql_ZKT.py](https://github.com/ERPNEXT-PAKISTAN/Machine-Integration/blob/main/erpnext_sql_ZKT.py)
+- [last_imported_hikvision](https://github.com/ERPNEXT-PAKISTAN/Machine-Integration/blob/main/last_imported_hikvision.txt)
+- [last_imported_ZKT](https://github.com/ERPNEXT-PAKISTAN/Machine-Integration/blob/main/last_imported_timestamp.txt)
+
+
 
 #### Using nano to create and edit the file:   
 📄 Using nano from terminal (for non‑GUI environments):   
