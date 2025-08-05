@@ -48,3 +48,16 @@ Follow each section below for a detailed guide, including copy-paste commands!
 
 [Installation Guide: Connect with MS-SQL Server on Ubuntu](https://github.com/ERPNEXT-PAKISTAN/Machine-Integration/blob/main/Installation%20Connect%20with%20MS-Sql%20Server%20on%20Ubuntu.md)
 ---
+
+## 🎥 Video Guide
+
+[![Watch on YouTube](https://img.youtube.com/vi/KaMYfNCXShc/0.jpg)](https://www.youtube.com/watch?v=KaMYfNCXShc&t=701s)
+[![Watch on YouTube](https://img.youtube.com/vi/4RZCt8ekIwU/0.jpg)](https://www.youtube.com/watch?v=4RZCt8ekIwU&t=452s)
+---
+
+## 📞 Need Help?
+
+**Contact:** Taimoor  
+**WhatsApp:** [wa.me/923009808900](https://wa.me/923009808900)
+
+---
