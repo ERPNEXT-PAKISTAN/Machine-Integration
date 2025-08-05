@@ -172,3 +172,12 @@ For queries and contributions, open an [Issue](https://github.com/ERPNEXT-PAKIST
   <img src="https://img.shields.io/github/stars/ERPNEXT-PAKISTAN/Machine-Integration?style=social">
   <img src="https://img.shields.io/github/forks/ERPNEXT-PAKISTAN/Machine-Integration?style=social">
 </p>
+
+
+---
+
+## 🎥 Video Guide
+
+[![Watch on YouTube](https://img.youtube.com/vi/4RZCt8ekIwU/0.jpg)](https://www.youtube.com/watch?v=4RZCt8ekIwU&t=452s)
+
+---
