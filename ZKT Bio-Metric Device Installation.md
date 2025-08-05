@@ -37,14 +37,13 @@ pip install -r requirements.txt
 
 ## 2. ⚙️ Configure the Tool
 
-- Locate the file `local_config.py.template`
-- Rename it to `local_config.py`
-- Fill in the required fields and save the file.
+| Step | Copy |
+|------|------|
+| Locate the file `local_config.py.template` | <button onclick="navigator.clipboard.writeText('local_config.py.template')">📋</button> |
+| Rename it to `local_config.py` | <button onclick="navigator.clipboard.writeText('local_config.py')">📋</button> |
+| Fill in the required fields and save the file. | <button onclick="navigator.clipboard.writeText('Fill in the required fields and save the file.')">📋</button> |
+| 📂 The file should be in: `frappe-bench/biometric-attendance-sync-tool/` | <button onclick="navigator.clipboard.writeText('frappe-bench/biometric-attendance-sync-tool/')">📋</button> |
 
-```bash
-# The configuration file should be here:
-frappe-bench/biometric-attendance-sync-tool/local_config.py
-```
 
 ---
 
