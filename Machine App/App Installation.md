@@ -141,9 +141,9 @@ from . import __version__ as app_version
 
 app_name = "biometric_integration"
 app_title = "Biometric Integration"
-app_publisher = "Your Name"
+app_publisher = "Taimoor"
 app_description = "Integrate Biometric Attendance Devices"
-app_email = "you@example.com"
+app_email = "taimoor986@gmail.com"
 app_license = "MIT"
 
 
@@ -302,3 +302,15 @@ t.sync_all_devices()
   <img src="https://img.icons8.com/fluency/48/ok.png" alt="Done"/><br/>
   <b>Done. Now new devices can be added in ERPNext UI only (no script changes).</b>
 </p>
+
+
+---
+
+## 📞 Need Help?
+
+**Contact:** Taimoor  
+**WhatsApp:** [wa.me/923009808900](https://wa.me/923009808900)
+
+---
+## Frappe.com
+https://github.com/frappe/biometric-attendance-sync-tool
