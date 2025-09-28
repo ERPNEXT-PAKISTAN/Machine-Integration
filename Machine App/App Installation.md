@@ -146,11 +146,24 @@ app_description = "Integrate Biometric Attendance Devices"
 app_email = "you@example.com"
 app_license = "MIT"
 
+
+# Version (optional - already in __version__)
+# app_version = "0.0.1"
+
+# Scheduler: run every 5 minutes
 scheduler_events = {
     "cron": {
-        "*/10 * * * *": ["biometric_integration.tasks.sync_all_devices"]
+        "*/5 * * * *": [
+            "biometric_integration.tasks.sync_all_devices"
+        ]
     }
 }
+
+# (Other hooks left default/empty)
+# override_whitelisted_methods = {
+# }
+
+# fixtures = []
 ```
 
 ---
