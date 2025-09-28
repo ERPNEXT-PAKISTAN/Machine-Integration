@@ -1,21 +1,25 @@
-# ERPNext Biometric Integration App (Complete Guide)
+<p align="center">
+  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-biometric-fingerprint-flatart-icons-outline-flatarticons.png" alt="Biometric Icon" width="80"/>
+  <h1 align="center">ERPNext Biometric Integration App</h1>
+  <p align="center"><em>Complete Guide</em></p>
+</p>
 
 ---
 
-## 0 — Prerequisites (on Ubuntu / ERPNext server)
+## 📝 0 — Prerequisites (on Ubuntu / ERPNext server)
 
-- **Ubuntu 22.04+** with sudo access  
-- **Bench + ERPNext** installed and running  
-- **Python 3.10+**  
-- **Git** installed  
+- <img src="https://img.icons8.com/ios-filled/18/228BE6/linux.png"/> **Ubuntu 22.04+** with sudo access  
+- <img src="https://img.icons8.com/ios-filled/18/228BE6/console.png"/> **Bench + ERPNext** installed and running  
+- <img src="https://img.icons8.com/ios-filled/18/228BE6/python.png"/> **Python 3.10+**  
+- <img src="https://img.icons8.com/ios-filled/18/228BE6/git.png"/> **Git** installed  
   ```bash
   sudo apt install git
   ```
-- Basic knowledge of ERPNext custom app creation
+- <img src="https://img.icons8.com/ios-filled/18/228BE6/mind-map.png"/> Basic knowledge of ERPNext custom app creation
 
 ---
 
-## 1 — Create New Custom App
+## 🛠️ 1 — Create New Custom App
 
 ```bash
 cd ~/frappe-bench
@@ -25,7 +29,7 @@ bench --site yoursite install-app biometric_integration
 
 ---
 
-## 2 — App Folder Structure
+## 📁 2 — App Folder Structure
 
 ```
 biometric_integration/
@@ -48,12 +52,12 @@ biometric_integration/
 
 ---
 
-## 3 — Device Driver Doctype (Child / Logic Config)
+## 🧩 3 — Device Driver Doctype (Child / Logic Config)
 
 **Path:** `biometric_integration/doctype/device_driver/device_driver.json`
 
 <details>
-<summary>JSON (click to copy)</summary>
+<summary><b>Show JSON <img src="https://img.icons8.com/material-rounded/16/228BE6/copy.png"/></b></summary>
 
 ```json
 {
@@ -74,12 +78,12 @@ biometric_integration/
 
 ---
 
-## 4 — Attendance Device Doctype (Parent / Actual Device)
+## 🖧 4 — Attendance Device Doctype (Parent / Actual Device)
 
 **Path:** `biometric_integration/doctype/attendance_device/attendance_device.json`
 
 <details>
-<summary>JSON (click to copy)</summary>
+<summary><b>Show JSON <img src="https://img.icons8.com/material-rounded/16/228BE6/copy.png"/></b></summary>
 
 ```json
 {
@@ -102,12 +106,12 @@ biometric_integration/
 
 ---
 
-## 5 — Optional Temp Log Doctype
+## 🗂️ 5 — Optional Temp Log Doctype
 
 **Path:** `biometric_integration/doctype/attendance_log_temp/attendance_log_temp.json`
 
 <details>
-<summary>JSON (click to copy)</summary>
+<summary><b>Show JSON <img src="https://img.icons8.com/material-rounded/16/228BE6/copy.png"/></b></summary>
 
 ```json
 {
@@ -128,7 +132,7 @@ biometric_integration/
 
 ---
 
-## 6 — `hooks.py`
+## 🔗 6 — <code>hooks.py</code>
 
 **Path:** `biometric_integration/hooks.py`
 
@@ -151,7 +155,7 @@ scheduler_events = {
 
 ---
 
-## 7 — `tasks.py`
+## 🔄 7 — <code>tasks.py</code>
 
 **Path:** `biometric_integration/tasks.py`
 
@@ -181,7 +185,7 @@ def sync_all_devices():
 
 ---
 
-## 8 — Driver: ZKTeco
+## 🟢 8 — Driver: ZKTeco
 
 **Path:** `biometric_integration/drivers/zkteco.py`
 
@@ -195,7 +199,7 @@ def sync(device_config):
 
 ---
 
-## 9 — Driver: Hikvision
+## 🟦 9 — Driver: Hikvision
 
 **Path:** `biometric_integration/drivers/hikvision.py`
 
@@ -207,7 +211,7 @@ def sync(device_config):
 
 ---
 
-## 10 — Driver: Anviz
+## 🟧 10 — Driver: Anviz
 
 **Path:** `biometric_integration/drivers/anviz.py`
 
@@ -219,7 +223,7 @@ def sync(device_config):
 
 ---
 
-## 11 — Enable Scheduler
+## ⏰ 11 — Enable Scheduler
 
 ```bash
 bench --site yoursite set-config enable_scheduler true
@@ -228,24 +232,25 @@ bench restart
 
 ---
 
-## 12 — Configure ERPNext
+## ⚙️ 12 — Configure ERPNext
 
 1. **Device Driver Doctype** → Create entries:
-    - ZKTeco SDK → `biometric_integration.drivers.zkteco`
-    - Hikvision SQL → `biometric_integration.drivers.hikvision`
-    - Anviz API → `biometric_integration.drivers.anviz`
+    - <img src="https://img.icons8.com/color/16/228BE6/fingerprint-scan.png"/> ZKTeco SDK → `biometric_integration.drivers.zkteco`
+    - <img src="https://img.icons8.com/color/16/228BE6/cctv.png"/> Hikvision SQL → `biometric_integration.drivers.hikvision`
+    - <img src="https://img.icons8.com/color/16/228BE6/fingerprint.png"/> Anviz API → `biometric_integration.drivers.anviz`
 2. **Attendance Device Doctype** → Add each device with IP/Port/Driver/Active.
 3. Scheduler will sync every 10 minutes → Logs saved to Employee Checkin.
 
 ---
 
-## 13 — Test Manual Sync
+## 🧪 13 — Test Manual Sync
 
 Open bench console:
 
 ```bash
 bench --site yoursite console
 ```
+
 Then run:
 
 ```python
@@ -255,9 +260,9 @@ t.sync_all_devices()
 
 ---
 
-## 14 — Debugging
+## 🐞 14 — Debugging
 
-- Errors logged via `frappe.log_error()` → ERPNext Error Log
+- Errors logged via `frappe.log_error()` → ERPNext Error Log  
 - Check running bench worker:
   ```bash
   bench worker
@@ -265,17 +270,22 @@ t.sync_all_devices()
 
 ---
 
-## 15 — Quick File List & Copy/Paste Instructions
+## 🗂️ 15 — Quick File List & Copy/Paste Instructions
 
-- `hooks.py` → scheduler config
-- `tasks.py` → sync logic
-- `drivers/zkteco.py` → ZKTeco logic
-- `drivers/hikvision.py` → Hikvision logic
-- `drivers/anviz.py` → Anviz logic
-- `doctype/device_driver/device_driver.json` → Device Driver schema
-- `doctype/attendance_device/attendance_device.json` → Attendance Device schema
-- `doctype/attendance_log_temp/attendance_log_temp.json` → Temp Log schema (optional)
+| File/Folder Path                                                  | Description                |
+|-------------------------------------------------------------------|----------------------------|
+| `hooks.py`                                                        | Scheduler config           |
+| `tasks.py`                                                        | Sync logic                 |
+| `drivers/zkteco.py`                                               | ZKTeco logic               |
+| `drivers/hikvision.py`                                            | Hikvision logic            |
+| `drivers/anviz.py`                                                | Anviz logic                |
+| `doctype/device_driver/device_driver.json`                        | Device Driver schema       |
+| `doctype/attendance_device/attendance_device.json`                | Attendance Device schema   |
+| `doctype/attendance_log_temp/attendance_log_temp.json` *(opt)*    | Temp Log schema (optional) |
 
 ---
 
-✅ **Done. Now new devices can be added in ERPNext UI only (no script changes).**
+<p align="center">
+  <img src="https://img.icons8.com/fluency/48/ok.png" alt="Done"/><br/>
+  <b>Done. Now new devices can be added in ERPNext UI only (no script changes).</b>
+</p>
