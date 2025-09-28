@@ -11,7 +11,28 @@
   ```bash
   sudo apt install git
   ```
-- Basic knowledge of ERPNext custom app creation
+- Basic knowledge of ERPNext custom app creation   
+---
+
+### Run under your bench folder (~/frappe-bench by default).   
+
+#### Make sure bench & ERPNext are running and you can create / install apps.   
+
+```
+Install network tools:
+```
+---
+
+#### Install Python libs inside bench env (important: install into bench env so ERPNext can import them):   
+
+```
+cd ~/frappe-bench
+source env/bin/activate
+pip install pyzk requests python-dateutil
+deactivate
+```
+`(pyzk is the Python library to speak ZKTeco devices over port 4370.)`
+
 
 ---
 
