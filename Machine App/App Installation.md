@@ -1,4 +1,4 @@
-# ERPNext Biometric Integration App (Complete Guide) — **v2**
+# ERPNext Biometric Integration App (Complete Guide) — v2
 
 ---
 
@@ -38,25 +38,24 @@ biometric_integration/
        │     ├── zkteco.py
        │     ├── hikvision.py
        │     └── anviz.py
-       └── biometric_integration/
-             └── doctype/
-                   ├── device_driver/
-                   │     └── device_driver.json
-                   ├── driver_parameter/
-                   │     └── driver_parameter.json
-                   ├── device_configuration/
-                   │     └── device_configuration.json
-                   ├── attendance_device/
-                   │     └── attendance_device.json
-                   └── attendance_log_temp/
-                         └── attendance_log_temp.json
+       └── doctype/
+             ├── device_driver/
+             │     └── device_driver.json
+             ├── driver_parameter/
+             │     └── driver_parameter.json
+             ├── device_configuration/
+             │     └── device_configuration.json
+             ├── attendance_device/
+             │     └── attendance_device.json
+             └── attendance_log_temp/
+                   └── attendance_log_temp.json
 ```
 
 ---
 
 ## 3 — Doctype Design (Parent & Child, v2) — FULL DETAIL
 
-### A) Child Table: **Driver Parameter**
+### A) Child Table: Driver Parameter
 
 | Field Label    | Fieldname      | Field Type  | Options / Notes |
 |----------------|--------------- |-------------|-----------------|
@@ -68,8 +67,10 @@ biometric_integration/
 | required       | required       | Check       | whether device must set it |
 | description    | description    | Small Text  | help text |
 
-**JSON:**
-```json name=biometric_integration/doctype/driver_parameter/driver_parameter.json
+<details>
+<summary>JSON for Driver Parameter</summary>
+
+```json
 {
   "doctype": "DocType",
   "name": "Driver Parameter",
@@ -88,10 +89,11 @@ biometric_integration/
   ]
 }
 ```
+</details>
 
 ---
 
-### B) Parent: **Device Driver**
+### B) Parent: Device Driver
 
 | Label         | Fieldname      | Field Type  | Options/Notes |
 |---------------|---------------|-------------|--------------|
@@ -102,8 +104,10 @@ biometric_integration/
 | Notes         | notes          | Small Text  | documentation |
 | Parameters    | parameters     | Table       | Options: Driver Parameter (child table) |
 
-**JSON:**
-```json name=biometric_integration/doctype/device_driver/device_driver.json
+<details>
+<summary>JSON for Device Driver</summary>
+
+```json
 {
   "doctype": "DocType",
   "name": "Device Driver",
@@ -119,10 +123,11 @@ biometric_integration/
   ]
 }
 ```
+</details>
 
 ---
 
-### C) Child Table: **Device Configuration**
+### C) Child Table: Device Configuration
 
 | Label        | Fieldname         | Field Type  | Notes |
 |--------------|-------------------|-------------|-------|
@@ -130,8 +135,10 @@ biometric_integration/
 | value        | value             | Data        | plain value |
 | value_password | value_password  | Password    | for secrets (driver will prefer this if set) |
 
-**JSON:**
-```json name=biometric_integration/doctype/device_configuration/device_configuration.json
+<details>
+<summary>JSON for Device Configuration</summary>
+
+```json
 {
   "doctype": "DocType",
   "name": "Device Configuration",
@@ -145,10 +152,11 @@ biometric_integration/
   ]
 }
 ```
+</details>
 
 ---
 
-### D) Parent: **Attendance Device**
+### D) Parent: Attendance Device
 
 | Label                | Fieldname            | Field Type    | Notes |
 |----------------------|----------------------|---------------|-------|
@@ -161,8 +169,10 @@ biometric_integration/
 | Last Sync Time       | last_sync_time       | Datetime      | updated by scheduler |
 | Device Configuration | device_configuration | Table         | Options: Device Configuration (child table) |
 
-**JSON:**
-```json name=biometric_integration/doctype/attendance_device/attendance_device.json
+<details>
+<summary>JSON for Attendance Device</summary>
+
+```json
 {
   "doctype": "DocType",
   "name": "Attendance Device",
@@ -180,10 +190,11 @@ biometric_integration/
   ]
 }
 ```
+</details>
 
 ---
 
-### E) (Optional) Table: **Attendance Log Temp**
+### E) (Optional) Table: Attendance Log Temp
 
 | Label        | Fieldname       | Field Type        |
 |--------------|-----------------|-------------------|
@@ -193,8 +204,10 @@ biometric_integration/
 | direction    | direction       | Select            |
 | synced       | synced          | Check             |
 
-**JSON:**
-```json name=biometric_integration/doctype/attendance_log_temp/attendance_log_temp.json
+<details>
+<summary>JSON for Attendance Log Temp</summary>
+
+```json
 {
   "doctype": "DocType",
   "name": "Attendance Log Temp",
@@ -209,13 +222,180 @@ biometric_integration/
   ]
 }
 ```
+</details>
 
 ---
 
-## (Other Steps Unchanged: Hooks, Tasks, Drivers, Scheduler, etc.)
+## 4 — Sample hooks.py
 
-Continue with the rest of the steps (hooks.py, tasks.py, drivers, enable scheduler, configuration, testing, debugging, etc.) as in your original guide above.
+**Path:** `biometric_integration/hooks.py`
+```python
+from . import __version__ as app_version
+
+app_name = "biometric_integration"
+app_title = "Biometric Integration"
+app_publisher = "Your Name"
+app_description = "Integrate Biometric Attendance Devices"
+app_email = "you@example.com"
+app_license = "MIT"
+
+scheduler_events = {
+    "cron": {
+        "*/10 * * * *": ["biometric_integration.tasks.sync_all_devices"]
+    }
+}
+```
 
 ---
 
-✅ **Done. Now new device types, drivers, and device configurations can be added in ERPNext UI only (no script changes required!)**
+## 5 — Sample tasks.py
+
+**Path:** `biometric_integration/tasks.py`
+```python
+import importlib
+import frappe
+
+def sync_all_devices():
+    devices = frappe.get_all("Attendance Device", filters={"active": 1}, fields="*")
+    for d in devices:
+        driver = frappe.db.get_value("Device Driver", d.device_driver, ["python_module"], as_dict=True)
+        if not driver:
+            continue
+        try:
+            module = importlib.import_module(driver["python_module"])
+            # collect config as dict from child table
+            config = {}
+            rows = frappe.get_all("Device Configuration", filters={"parent": d.name, "parenttype": "Attendance Device"}, fields=["parameter_key","value","value_password"])
+            for row in rows:
+                config[row.parameter_key] = row.value_password or row.value
+            logs = module.sync(config)
+            for log in logs:
+                frappe.get_doc({
+                    "doctype": "Employee Checkin",
+                    "employee": log["employee_id"],
+                    "time": log["timestamp"],
+                    "log_type": log["direction"]
+                }).insert(ignore_permissions=True)
+        except Exception as e:
+            frappe.log_error(message=str(e), title=f"Sync failed for {d.device_name}")
+```
+
+---
+
+## 6 — Sample Driver Modules
+
+**Path:** `biometric_integration/drivers/zkteco.py`
+```python
+def sync(device_config):
+    # device_config dict contains all needed fields
+    # Example: {'ip': '192.168.1.10', 'port': '4370', ...}
+    return [
+        {"employee_id": "E001", "timestamp": "2025-09-28 08:30:00", "direction": "IN"},
+        {"employee_id": "E002", "timestamp": "2025-09-28 08:35:00", "direction": "IN"}
+    ]
+```
+
+**Path:** `biometric_integration/drivers/hikvision.py`
+```python
+def sync(device_config):
+    # Example: query SQL Server or API
+    return []
+```
+
+**Path:** `biometric_integration/drivers/anviz.py`
+```python
+def sync(device_config):
+    # Example: REST API call
+    return []
+```
+
+---
+
+## 7 — Enable Scheduler
+
+```bash
+bench --site yoursite set-config enable_scheduler true
+bench restart
+```
+
+---
+
+## 8 — Configure Device Drivers
+
+1. **Device Driver Doctype** → Create entries:
+    - ZKTeco SDK → `biometric_integration.drivers.zkteco`
+    - Hikvision SQL → `biometric_integration.drivers.hikvision`
+    - Anviz API → `biometric_integration.drivers.anviz`
+2. **Add Driver Parameter child rows** for all config fields required by each driver (e.g. ip, port, secret, etc.)
+
+---
+
+## 9 — Add Attendance Devices
+
+- **Attendance Device Doctype** → Add each device (name, driver, ip, port, etc)
+- Add Device Configuration rows for each parameter (key + value/password)
+
+---
+
+## 10 — Sync Schedule
+
+- Scheduler will sync every 10 minutes.
+- Logs saved to Employee Checkin.
+
+---
+
+## 11 — Test Manual Sync
+
+Open bench console:
+
+```bash
+bench --site yoursite console
+```
+Then run:
+
+```python
+import biometric_integration.tasks as t
+t.sync_all_devices()
+```
+
+---
+
+## 12 — Debugging
+
+- Errors logged via `frappe.log_error()` → ERPNext Error Log
+- Check running bench worker:
+  ```bash
+  bench worker
+  ```
+
+---
+
+## 13 — Quick File List & Copy/Paste Instructions
+
+| File/Folder Path                                                  | Description                |
+|-------------------------------------------------------------------|----------------------------|
+| `hooks.py`                                                        | Scheduler config           |
+| `tasks.py`                                                        | Sync logic                 |
+| `drivers/zkteco.py`                                               | ZKTeco logic               |
+| `drivers/hikvision.py`                                            | Hikvision logic            |
+| `drivers/anviz.py`                                                | Anviz logic                |
+| `doctype/device_driver/device_driver.json`                        | Device Driver schema       |
+| `doctype/driver_parameter/driver_parameter.json`                  | Driver Parameter schema    |
+| `doctype/device_configuration/device_configuration.json`           | Device Configuration schema|
+| `doctype/attendance_device/attendance_device.json`                | Attendance Device schema   |
+| `doctype/attendance_log_temp/attendance_log_temp.json` *(opt)*    | Temp Log schema (optional) |
+
+---
+
+## 14 — (Optional) Attendance Log Temp
+
+- Use this if you want to store raw logs before mapping to Employee Checkin.
+- Table and JSON included above.
+
+---
+
+## 15 — UI-Driven Expansion
+
+✅ **Now, all device types, drivers, and config are UI-driven: no code changes required for new devices!**
+
+---
