@@ -76,5 +76,9 @@ python3 erpnext_sync.py
 **WhatsApp:** [wa.me/923009808900](https://wa.me/923009808900)
 
 ---
+## Frappe.com
+https://github.com/frappe/biometric-attendance-sync-tool
 
 > 📝 For best results, ensure you have Python 3 installed and ERPNext running on your server.
+
+
