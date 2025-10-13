@@ -32,9 +32,9 @@ DEFAULT_LON = 74.2520218
 
 # timestamp file (WSL vs plain linux)
 if "microsoft" in platform.uname().release.lower():
-    TIMESTAMP_FILE = "/home/erpnext/last_imported_hikvision.txt"
+    TIMESTAMP_FILE = "/home/erpnext/last_imported_zkt.txt"
 else:
-    TIMESTAMP_FILE = r"\\wsl.localhost\Ubuntu-22.04\home\erpnext\last_imported_hikvision.txt"
+    TIMESTAMP_FILE = r"\\wsl.localhost\Ubuntu-22.04\home\erpnext\last_imported_zkt.txt"
 
 # ===============================================================
 # UTILITIES
