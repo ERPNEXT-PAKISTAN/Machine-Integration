@@ -179,3 +179,20 @@ SELECT host FROM mysql.user WHERE user = 'ivms_user';
 ```
 
 </details>
+
+
+---
+C:\Program Files\MySQL\MySQL Server 8.0\lib\libmysql.dll
+---
+
+Database type: "MySQL"
+Configuration file: C:\Program Files\MySQL\MySQL Server 8.0\lib\libmysql.dll
+Server IP Address: "172.169.12.88"
+Port: "3306"
+Database Name: "hikvision"
+User Name: "frappe"
+User Password: "Master@4202"
+
+---
+
+
