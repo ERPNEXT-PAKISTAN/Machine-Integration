@@ -258,6 +258,22 @@ tail -f /opt/zk_adms/logs/adms.log
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ---
 
+<p align="center">
+
+  <!-- Suprema/Password Device -->
+  <img src="https://img.icons8.com/color/96/keypad.png" width="73" title="Suprema/Password Device"/>
+  <!-- Face Recognition Device (WORKING and reliable) -->
+  <img src="https://img.icons8.com/color/96/face-id.png" width="73" title="Face Recognition"/>
+  <!-- Classic Device Terminal (Icons8: ATM, as a generic device/machine) -->
+  <img src="https://img.icons8.com/color/96/atm.png" width="73" title="Device Machine"/>
+
+</p>
+
+
+
+
+
+
 
 
 
