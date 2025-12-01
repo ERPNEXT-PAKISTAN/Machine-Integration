@@ -110,10 +110,10 @@ import logging
 # -------------------------------------------------------
 # CONFIG (CHANGE THESE ONLY)
 # -------------------------------------------------------
-ERPNEXT_URL = "https://fibersoft.org"    |------|    `your site`
-ERPNEXT_API_KEY = "YOUR_API_KEY"         |------|    `CHANGE`
-ERPNEXT_API_SECRET = "YOUR_API_SECRET"   |------|    `CHANGE`
-PRIMARY_FIELD = "attendance_device_id"   |------|    `do not change`
+ERPNEXT_URL = "https://fibersoft.org"
+ERPNEXT_API_KEY = "YOUR_API_KEY"
+ERPNEXT_API_SECRET = "YOUR_API_SECRET"
+PRIMARY_FIELD = "attendance_device_id"
 
 # -------------------------------------------------------
 # Logging
@@ -215,12 +215,12 @@ if __name__ == "__main__":
 > ✔ Minimal Working ADMS Script    
 > Supports SpeedFace-V5L, uFace, ZKTeco ADMS
 >
-> # CHANGE THESE CONFIGURATION ONLY:
+> ### CHANGE THESE CONFIGURATION ONLY:
 > 
-> ERPNEXT_URL = "https://fibersoft.org"      # your site    
-> ERPNEXT_API_KEY = "YOUR_API_KEY"           # CHANGE    
-> ERPNEXT_API_SECRET = "YOUR_API_SECRET"     # CHANGE    
-> PRIMARY_FIELD = "attendance_device_id"     # do not change    
+> ERPNEXT_URL = "https://fibersoft.org"     -------  your site    
+> ERPNEXT_API_KEY = "YOUR_API_KEY"          -------  CHANGE    
+> ERPNEXT_API_SECRET = "YOUR_API_SECRET"    -------  CHANGE    
+> PRIMARY_FIELD = "attendance_device_id"    -------  do not change    
 
 ---
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
