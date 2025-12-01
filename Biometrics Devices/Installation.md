@@ -254,6 +254,16 @@ ps aux | grep adms_listener
 ```Terminal
 tail -f /opt/zk_adms/logs/adms.log
 ```
+
+#### You Should See Like This.
+```
+[CDAT BODY]
+107 2025-11-22 21:32:54 0 1 0 0 0 0
+[ERPNext Response] 200 {"data": {"name":...}}
+```
+
+
+
 ---
 
 ||||||||||- Configure the Attendance device -||||||||||
@@ -275,40 +285,62 @@ tail -f /opt/zk_adms/logs/adms.log
 | **Enable Domain**    | OFF                |
 | **Proxy**            | OFF                |
 
----
+
+### 🌐 Find IP Address of WSL Ubuntu: 🖧
+```Terminal
+ip addr
+```
+
+## <img src="https://img.shields.io/badge/★-1-blue?style=flat-square" alt="star-1"/> ERPNext Employee Mapping
+> Fieldname: attendance_device_id   
+> Value = PIN on device   
 
 
-### 🌐 IP Address
-### 🖧 IP Address
+## <img src="https://img.shields.io/badge/★-2-green?style=flat-square" alt="star-2"/> 
+
+✔ If you want:
+
+### Create Doctype:
+Add device
+Add ERPNext credentials
+Add mode (ZKT ADMS / Hikvision SQL)
+Auto-reload config into script
+Dashboard: Device Status + Last Event
 
 
-### <img src="https://img.icons8.com/fluency/48/ip-address.png" width="24"/> Find IP Address of WSL Ubuntu:
-### <img src="https://img.icons8.com/color/48/ip-address.png" width="24"/> Find IP Address of WSL Ubuntu:
-### <img src="https://img.icons8.com/fluency/48/globe-network.png" width="24"/> Find IP Address of WSL Ubuntu:
+## <img src="https://img.shields.io/badge/★-3-orange?style=flat-square" alt="star-3"/> 
 
-
-
-### <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f310.png" width="24"/> Find IP Address of WSL Ubuntu:
-
-
-
-### <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><circle cx='14' cy='14' r='13' fill='%2300aaff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='11' fill='%23ffffff' font-weight='700'>IP</text></svg>" width="24" height="24" alt="IP"/> Find IP Address of WSL Ubuntu:
-
-
-
-
-
-
+are using the Minimal Working ADMS Script I provided earlier, and in that version the devices block is NOT visible, because the script auto-detects the device from the request (SN and IP) instead of requiring a device list.
 
 ---
 
 ## <img src="https://img.icons8.com/fluency/48/code.png" width="25"/> Code Snippets
+
+✔ But your CURRENT SCRIPT (minimal version) does NOT need device IP
+
+Your current script works like this:
+
+Device sends to:
+http://your-wsl-ip:5000/iclock/cdata?SN=xxx&table=ATTLOG
+Script captures:
+SN = serial number
+client_ip = device IP
+Script sends data to ERPNext using that info.
+So you do NOT need to configure IP anywhere.
+
+---
 
 - <img src="https://img.icons8.com/ios-filled/50/source-code.png" width="21"/> Source Code
 - <img src="https://img.icons8.com/fluency/48/copy.png" width="21"/> Copy
 - <img src="https://img.icons8.com/material-outlined/48/copy.png" width="21"/> Copy
 
 ---
+
+
+
+
+
+
 
 ### ⭐ Star (emoji)
 ### ✨ Sparkle (emoji)
