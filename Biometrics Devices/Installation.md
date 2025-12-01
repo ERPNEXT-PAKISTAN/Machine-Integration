@@ -56,6 +56,12 @@ cd /opt/zk_adms
 ### <summary><img src="https://img.icons8.com/color/48/000000/code-file.png" width="22"/> virtual environment</summary>
 
 ```Terminal
+sudo apt update
+```
+```Terminal
+sudo apt install python3-venv -y
+```
+```Terminal
 python3 -m venv .venv
 ```
 ```Terminal
@@ -64,6 +70,16 @@ source .venv/bin/activate
 ```Terminal
 pip install flask requests
 ```
+✔ STEP 3 — Create log directory
+```Terminal
+mkdir -p /opt/zk_adms/logs
+```
+Give ownership to frappe (optional but recommended):
+```Terminal
+sudo chown -R frappe:frappe /opt/zk_adms
+```
+
+
 
 </details>
 
