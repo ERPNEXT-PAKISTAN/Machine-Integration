@@ -89,7 +89,7 @@ sudo chown -R frappe:frappe /opt/zk_adms
 ---
 
 
-## <img src="https://img.icons8.com/color/48/000000/python--v1.png" width="25"/> Python Server Script
+## <img src="https://img.icons8.com/color/48/000000/python--v1.png" width="25"/> Python Script
 ## ✔ STEP 4 — Create File adms_listener.py
 
 <details>
@@ -98,6 +98,117 @@ sudo chown -R frappe:frappe /opt/zk_adms
 ```python
 nano /opt/zk_adms/adms_listener.py
 ```
+```python
+#!/usr/bin/env python3
+# Minimal ADMS listener for SpeedFace / ZKT
+# Maps Employee.attendance_device_id → ERPNext Employee Checkin
+
+from flask import Flask, request, Response
+import requests, json
+import logging
+
+# -------------------------------------------------------
+# CONFIG (CHANGE THESE ONLY)
+# -------------------------------------------------------
+ERPNEXT_URL = "https://fibersoft.org"      # your site
+ERPNEXT_API_KEY = "YOUR_API_KEY"           # CHANGE
+ERPNEXT_API_SECRET = "YOUR_API_SECRET"     # CHANGE
+PRIMARY_FIELD = "attendance_device_id"     # do not change
+
+# -------------------------------------------------------
+# Logging
+# -------------------------------------------------------
+logging.basicConfig(
+    filename="/opt/zk_adms/logs/adms.log",
+    level=logging.INFO,
+    format="%(asctime)s %(message)s"
+)
+
+app = Flask(__name__)
+
+def erp_headers():
+    return {
+        "Authorization": f"token {ERPNEXT_API_KEY}:{ERPNEXT_API_SECRET}",
+        "Content-Type": "application/json"
+    }
+
+# -------------------------------------------------------
+# Find ERPNext Employee by device PIN
+# -------------------------------------------------------
+def find_employee(pin):
+    try:
+        url = f"{ERPNEXT_URL}/api/resource/Employee"
+        params = {
+            "filters": json.dumps([[ "Employee", PRIMARY_FIELD, "=", str(pin) ]]),
+            "fields": json.dumps(["name", "employee_name"])
+        }
+        r = requests.get(url, headers=erp_headers(), params=params, timeout=5)
+        if r.status_code == 200:
+            data = r.json().get("data", [])
+            if data:
+                return data[0]["name"]
+        return None
+    except:
+        return None
+
+def create_checkin(emp, ts, device):
+    url = f"{ERPNEXT_URL}/api/resource/Employee Checkin"
+    payload = {
+        "employee": emp,
+        "time": ts,
+        "log_type": "IN",
+        "device_id": device
+    }
+    return requests.post(url, headers=erp_headers(), json=payload)
+
+# -------------------------------------------------------
+# Mandatory endpoint for SpeedFace ADMS
+# -------------------------------------------------------
+@app.route("/iclock/getrequest", methods=["GET"])
+def get_request():
+    sn = request.args.get("SN")
+    logging.info(f"[GETREQUEST] SN={sn}")
+    return Response("OK", 200)
+
+@app.route("/iclock/cdata", methods=["POST", "GET"])
+def cdata():
+    args = request.args.to_dict()
+    body = request.get_data(as_text=True)
+
+    logging.info(f"[CDAT PARAMS] {args}")
+    logging.info(f"[CDAT BODY]\n{body}")
+
+    lines = [l.strip() for l in body.splitlines() if l.strip()]
+    sn = args.get("SN", "UNKNOWN")
+
+    for line in lines:
+        parts = line.split()
+        if len(parts) < 2:
+            continue
+
+        pin = parts[0]
+        date = parts[1]
+        time_part = parts[2] if len(parts) > 2 else "00:00:00"
+
+        ts = f"{date} {time_part}"
+
+        emp = find_employee(pin)
+        if not emp:
+            logging.info(f"[NO MATCH] No ERP Employee for PIN={pin}")
+            continue
+
+        r = create_checkin(emp, ts, sn)
+        logging.info(f"[ERPNext Response] {r.status_code} {r.text[:150]}")
+
+    return Response("OK", 200)
+
+if __name__ == "__main__":
+    logging.info("Starting ADMS listener on port 5000")
+    app.run(host="0.0.0.0", port=5000, debug=False)
+
+```
+
+
 </details>
 
 > **Note:**  
