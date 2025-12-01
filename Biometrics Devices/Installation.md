@@ -233,13 +233,37 @@ if __name__ == "__main__":
 chmod +x /opt/zk_adms/adms_listener.py
 ```
 ---
+### ▶️ Run the Listener (as frappe user)
+
+```Enter to Folder:
+cd /opt/zk_adms
+```
+```Start Virtual Enviroment:
+source .venv/bin/activate
+```
+```Terminal
+nohup ./adms_listener.py > /opt/zk_adms/nohup.out 2>&1 &
+```
+---
+### ⭐ Check Running:
+```Terminal
+ps aux | grep adms_listener
+```
+
+### ✨ Check Logs:
+```Terminal
+tail -f /opt/zk_adms/logs/adms.log
+```
+---
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+---
 
 
 
 
 
 ---
-|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
 ---
 
 ## <img src="https://img.icons8.com/fluency/48/code.png" width="25"/> Code Snippets
@@ -261,14 +285,10 @@ chmod +x /opt/zk_adms/adms_listener.py
 ### ⏯️ Play/Pause (emoji)
 
 ### <img src="https://img.icons8.com/fluency/48/play.png" width="24"/> Play (Icons8)
-### <img src="https://img.icons8.com/fluency/48/play-button.png" width="24"/> Start Button (Icons8)
-### <img src="https://img.icons8.com/fluency/48/round-play-button.png" width="24"/> Circular Play (Icons8)
+
 
 
 <!-- simple badge with star and number using Shields.io -->
 <img src="https://img.shields.io/badge/★-1-blue?style=flat-square" alt="star-1"/>
 <img src="https://img.shields.io/badge/★-2-green?style=flat-square" alt="star-2"/>
 <img src="https://img.shields.io/badge/★-3-orange?style=flat-square" alt="star-3"/>
-
-<!-- small circular SVG star (data-URI) -->
-<img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24'><circle cx='12' cy='12' r='11' fill='%23FFD700'/><path d='M12 7.5l1.902 3.857L18 12.5l-3 2.82L15.804 20 12 17.27 8.196 20 9 15.32 6 12.5l4.098-1.143L12 7.5z' fill='%23000'/></svg>" width="28" alt="star"/>
