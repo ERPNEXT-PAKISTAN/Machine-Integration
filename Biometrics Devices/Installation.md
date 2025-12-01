@@ -256,18 +256,17 @@ tail -f /opt/zk_adms/logs/adms.log
 ```
 ---
 
-||||||||||- Configure the SpeedFace-V5L device -|||||||||||||||
+||||||||||- Configure the Attendance device -||||||||||
 ---
-### ⭐ On Device
+
 <p align="left">
   <img src="https://img.icons8.com/color/96/keypad.png" width="73" title="Suprema/Password Device"/>
   <img src="https://img.icons8.com/color/96/atm.png" width="73" title="Device Machine"/>
 </p>
----
-
+### ⭐ On Device
 | Setting              | Value              |
 | -------------------- | ------------------ |
-| **Server Address**   | http://YOUR_WSL_IP |
+| **Server Address**   | 192.168.10.15      |
 | **Port**             | 5000               |
 | **Server Path**      | /iclock/           |
 | **Server Type**      | ADMS / ZKBioCloud  |
@@ -278,12 +277,21 @@ tail -f /opt/zk_adms/logs/adms.log
 ---
 
 
+### 🌐 IP Address
+### 🖧 IP Address
+
+
+### <img src="https://img.icons8.com/fluency/48/ip-address.png" width="24"/> Find IP Address of WSL Ubuntu:
+### <img src="https://img.icons8.com/color/48/ip-address.png" width="24"/> Find IP Address of WSL Ubuntu:
+### <img src="https://img.icons8.com/fluency/48/globe-network.png" width="24"/> Find IP Address of WSL Ubuntu:
 
 
 
+### <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f310.png" width="24"/> Find IP Address of WSL Ubuntu:
 
 
 
+### <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><circle cx='14' cy='14' r='13' fill='%2300aaff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='11' fill='%23ffffff' font-weight='700'>IP</text></svg>" width="24" height="24" alt="IP"/> Find IP Address of WSL Ubuntu:
 
 
 
