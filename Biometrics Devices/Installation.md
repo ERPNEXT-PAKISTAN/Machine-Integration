@@ -211,7 +211,12 @@ if __name__ == "__main__":
 
 </details>
 
-> **Note:**   
+> **Note:**
+>> Save:
+>> CTRL+O
+>> ENTER
+>> CTRL+X
+> 
 > ✔ Minimal Working ADMS Script    
 > Supports SpeedFace-V5L, uFace, ZKTeco ADMS
 >
@@ -221,6 +226,17 @@ if __name__ == "__main__":
 > ERPNEXT_API_KEY = "YOUR_API_KEY"          -------  CHANGE    
 > ERPNEXT_API_SECRET = "YOUR_API_SECRET"    -------  CHANGE    
 > PRIMARY_FIELD = "attendance_device_id"    -------  do not change    
+
+---
+✔ Make executable:
+```Terminal
+chmod +x /opt/zk_adms/adms_listener.py
+```
+---
+
+
+
+
 
 ---
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -234,48 +250,25 @@ if __name__ == "__main__":
 
 ---
 
-## <img src="https://img.icons8.com/fluency/48/report-card.png" width="25"/> Report View
+### ⭐ Star (emoji)
+### ✨ Sparkle (emoji)
 
-- <img src="https://img.icons8.com/office/48/report-card.png" width="21"/> Office
-- <img src="https://img.icons8.com/fluency/48/document.png" width="21"/> Document
+### <img src="https://img.icons8.com/fluency/48/star.png" width="24"/> Star (Icons8 - color)
+### <img src="https://img.icons8.com/fluency/48/star--v1.png" width="24"/> Star (Icons8 - filled)
+### <img src="https://img.icons8.com/ios/50/star--v1.png" width="24"/> Star (Icons8 - outline)
 
----
+### ▶️ Start (emoji play)
+### ⏯️ Play/Pause (emoji)
 
-## <img src="https://img.icons8.com/color/48/css3.png" width="25"/> CSS Code
-## <img src="https://img.icons8.com/color/48/000000/microsoft-sql-server.png" width="25"/> SQL Query
-## <img src="https://img.icons8.com/fluency/48/report-card.png" width="25"/> Report Name Setting
-## <img src="https://img.icons8.com/fluency/48/combo-chart.png" width="25"/> <img src="https://img.icons8.com/color/48/marker.png" width="21"/> Dashboard Indicators
-
----
-
-## 🔍 🧹 🔄 Set Filters in JavaScript
-
-- 🔍 Filter
-- 🧹 Clear Filter
-- 🔄 Reset Filter
-
-### <img src="https://img.icons8.com/fluency/48/folder.png" width="28"/> Folder
-### <img src="https://img.icons8.com/color/48/folder.png" width="28"/> Folder
-### <img src="https://img.icons8.com/fluency/48/open-folder.png" width="28"/> Open Folder
-### <img src="https://img.icons8.com/fluency/48/folder-add.png" width="28"/> New Folder
-### <img src="https://img.icons8.com/fluency/48/folder-lock.png" width="28"/> Locked Folder
-### <img src="https://img.icons8.com/fluency/48/folder-invoices.png" width="28"/> Folder with files
-
-### <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c1.png" width="28"/> Folder (emoji image)
-### <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f5c2.png" width="28"/> Card index (grouped folders)
-
-### <img src="https://img.icons8.com/fluency/48/open-box.png" width="24"/> <img src="https://img.icons8.com/color/48/python--v1.png" width="24"/> Create virtual environment
-### <img src="https://img.icons8.com/fluency/48/open-box.png" width="24"/> <img src="https://img.icons8.com/color/48/python--v1.png" width="24"/> Create virtual environment
+### <img src="https://img.icons8.com/fluency/48/play.png" width="24"/> Play (Icons8)
+### <img src="https://img.icons8.com/fluency/48/play-button.png" width="24"/> Start Button (Icons8)
+### <img src="https://img.icons8.com/fluency/48/round-play-button.png" width="24"/> Circular Play (Icons8)
 
 
+<!-- simple badge with star and number using Shields.io -->
+<img src="https://img.shields.io/badge/★-1-blue?style=flat-square" alt="star-1"/>
+<img src="https://img.shields.io/badge/★-2-green?style=flat-square" alt="star-2"/>
+<img src="https://img.shields.io/badge/★-3-orange?style=flat-square" alt="star-3"/>
 
-<p align="center">
-  <img src="https://img.icons8.com/fluency/48/folder.png" width="34"/>  
-  <b>Project Files</b>
-</p>
-
-
----
-
-> ✨ **Tip:**  
-> You can switch, copy, or export code and data using the icons above.
+<!-- small circular SVG star (data-URI) -->
+<img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24'><circle cx='12' cy='12' r='11' fill='%23FFD700'/><path d='M12 7.5l1.902 3.857L18 12.5l-3 2.82L15.804 20 12 17.27 8.196 20 9 15.32 6 12.5l4.098-1.143L12 7.5z' fill='%23000'/></svg>" width="28" alt="star"/>
