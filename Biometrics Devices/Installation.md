@@ -110,10 +110,10 @@ import logging
 # -------------------------------------------------------
 # CONFIG (CHANGE THESE ONLY)
 # -------------------------------------------------------
-ERPNEXT_URL = "https://fibersoft.org"      # your site
-ERPNEXT_API_KEY = "YOUR_API_KEY"           # CHANGE
-ERPNEXT_API_SECRET = "YOUR_API_SECRET"     # CHANGE
-PRIMARY_FIELD = "attendance_device_id"     # do not change
+ERPNEXT_URL = "https://fibersoft.org"    |------|    `your site`
+ERPNEXT_API_KEY = "YOUR_API_KEY"         |------|    `CHANGE`
+ERPNEXT_API_SECRET = "YOUR_API_SECRET"   |------|    `CHANGE`
+PRIMARY_FIELD = "attendance_device_id"   |------|    `do not change`
 
 # -------------------------------------------------------
 # Logging
