@@ -16,20 +16,15 @@
 
   <!-- Hikvision Biometric Device -->
   <img src="https://img.icons8.com/color/96/face-id.png" width="73" title="Hikvision Device"/>
-  
-  <!-- Generic Biometric Reader -->
+    <!-- Generic Biometric Reader -->
   <img src="https://img.icons8.com/color/96/fingerprint.png" width="73" title="Generic Biometric Device"/>
-  
-  <!-- Anviz Device or Iris Scanner -->
+    <!-- Anviz Device or Iris Scanner -->
   <img src="https://img.icons8.com/color/96/iris-scan.png" width="73" title="Anviz Device or Iris Scanner"/>
-  
-  <!-- Suprema/Password Device -->
+    <!-- Suprema/Password Device -->
   <img src="https://img.icons8.com/color/96/keypad.png" width="73" title="Suprema/Password Device"/>
-
-  <!-- Face Recognition Device (WORKING and reliable) -->
+    <!-- Face Recognition Device (WORKING and reliable) -->
 <img src="https://img.icons8.com/color/96/face-id.png" width="73" title="Face Recognition"/>
-
-<!-- Classic Device Terminal (Icons8: ATM, as a generic device/machine) -->
+    <!-- Classic Device Terminal (Icons8: ATM, as a generic device/machine) -->
 <img src="https://img.icons8.com/color/96/atm.png" width="73" title="Device Machine"/>
 
 </p>
@@ -40,15 +35,27 @@
 ## <img src="https://img.icons8.com/color/48/ubuntu--v1.png" width="25"/> Ubuntu Terminal Code:
 
 <details>
-<summary><img src="https://img.icons8.com/color/48/000000/code-file.png" width="22"/> Copy HTML</summary>
+<summary><img src="https://img.icons8.com/color/48/000000/code-file.png" width="22"/> Create folder</summary>
 
-```html
-<!-- Paste your HTML code here -->
+```Terminal
+sudo mkdir -p /opt/zk_adms
+sudo chown $USER:$USER /opt/zk_adms
+cd /opt/zk_adms
+```
+</details>
+
+<details>
+<summary><img src="https://img.icons8.com/color/48/000000/code-file.png" width="22"/> virtual environment</summary>
+
+```Terminal
+python3 -m venv .venv
+source .venv/bin/activate
+pip install flask requests
 ```
 </details>
 
 > **Note:**  
-> Copy and paste the code above in your HTML block.
+> Copy and paste Terminal.
 
 ---
 
