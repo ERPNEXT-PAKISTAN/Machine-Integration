@@ -211,8 +211,17 @@ if __name__ == "__main__":
 
 </details>
 
-> **Note:**  
-> Copy and use the server script as needed.
+> **Note:**
+> ✔ Minimal Working ADMS Script
+> Supports SpeedFace-V5L, uFace, ZKTeco ADMS
+>
+# -------------------------------------------------------
+# CONFIG (CHANGE THESE ONLY)
+# -------------------------------------------------------
+ERPNEXT_URL = "https://fibersoft.org"      # your site
+ERPNEXT_API_KEY = "YOUR_API_KEY"           # CHANGE
+ERPNEXT_API_SECRET = "YOUR_API_SECRET"     # CHANGE
+PRIMARY_FIELD = "attendance_device_id"     # do not change
 
 ---
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
