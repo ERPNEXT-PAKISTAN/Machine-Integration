@@ -255,27 +255,41 @@ ps aux | grep adms_listener
 tail -f /opt/zk_adms/logs/adms.log
 ```
 ---
-|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+||||||||||- Configure the SpeedFace-V5L device -|||||||||||||||
 ---
-
+### ⭐ On Device
 <p align="left">
-
-
   <img src="https://img.icons8.com/color/96/keypad.png" width="73" title="Suprema/Password Device"/>
   <img src="https://img.icons8.com/color/96/atm.png" width="73" title="Device Machine"/>
-
 </p>
+---
 
-
-
-
-
-
-
-
-
+| Setting              | Value              |
+| -------------------- | ------------------ |
+| **Server Address**   | http://YOUR_WSL_IP |
+| **Port**             | 5000               |
+| **Server Path**      | /iclock/           |
+| **Server Type**      | ADMS / ZKBioCloud  |
+| **Device Serial No** | keep original      |
+| **Enable Domain**    | OFF                |
+| **Proxy**            | OFF                |
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
