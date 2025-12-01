@@ -264,6 +264,7 @@ tail -f /opt/zk_adms/logs/adms.log
   <img src="https://img.icons8.com/color/96/atm.png" width="73" title="Device Machine"/>
 </p>
 ### ⭐ On Device
+
 | Setting              | Value              |
 | -------------------- | ------------------ |
 | **Server Address**   | 192.168.10.15      |
