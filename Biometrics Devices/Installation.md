@@ -32,27 +32,41 @@
 
 ---
 
-## <img src="https://img.icons8.com/color/48/ubuntu--v1.png" width="25"/> Ubuntu Terminal Code:
+## 1️⃣ <img src="https://img.icons8.com/color/48/ubuntu--v1.png" width="25"/> Ubuntu Terminal Code:
 
 <details>
-<summary><img src="https://img.icons8.com/color/48/000000/code-file.png" width="22"/> Create folder</summary>
-
+<summary>1️⃣<img src="https://github.githubassets.com/images/icons/emoji/unicode/1f5c2.png" width="28"/> Create folder</summary> 
+  
+#### <summary><img src="https://img.icons8.com/color/48/000000/code-file.png" width="22"/> Create folder</summary>  
+  
 ```Terminal
 sudo mkdir -p /opt/zk_adms
+```
+```Terminal
 sudo chown $USER:$USER /opt/zk_adms
+```
+```Terminal
 cd /opt/zk_adms
 ```
 </details>
 
 <details>
-<summary><img src="https://img.icons8.com/color/48/000000/code-file.png" width="22"/> virtual environment</summary>
+<summary>2️⃣<img src="https://img.icons8.com/fluency/48/open-box.png" width="24"/> Create virtual environment </summary> 
+
+### <summary><img src="https://img.icons8.com/color/48/000000/code-file.png" width="22"/> virtual environment</summary>
 
 ```Terminal
 python3 -m venv .venv
+```
+```Terminal
 source .venv/bin/activate
+```
+```Terminal
 pip install flask requests
 ```
+
 </details>
+
 
 > **Note:**  
 > Copy and paste Terminal.
@@ -118,6 +132,27 @@ pip install flask requests
 - 🔍 Filter
 - 🧹 Clear Filter
 - 🔄 Reset Filter
+
+### <img src="https://img.icons8.com/fluency/48/folder.png" width="28"/> Folder
+### <img src="https://img.icons8.com/color/48/folder.png" width="28"/> Folder
+### <img src="https://img.icons8.com/fluency/48/open-folder.png" width="28"/> Open Folder
+### <img src="https://img.icons8.com/fluency/48/folder-add.png" width="28"/> New Folder
+### <img src="https://img.icons8.com/fluency/48/folder-lock.png" width="28"/> Locked Folder
+### <img src="https://img.icons8.com/fluency/48/folder-invoices.png" width="28"/> Folder with files
+
+### <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c1.png" width="28"/> Folder (emoji image)
+### <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f5c2.png" width="28"/> Card index (grouped folders)
+
+### <img src="https://img.icons8.com/fluency/48/open-box.png" width="24"/> <img src="https://img.icons8.com/color/48/python--v1.png" width="24"/> Create virtual environment
+### <img src="https://img.icons8.com/fluency/48/open-box.png" width="24"/> <img src="https://img.icons8.com/color/48/python--v1.png" width="24"/> Create virtual environment
+
+
+
+<p align="center">
+  <img src="https://img.icons8.com/fluency/48/folder.png" width="34"/>  
+  <b>Project Files</b>
+</p>
+
 
 ---
 
