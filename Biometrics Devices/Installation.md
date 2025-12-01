@@ -74,43 +74,29 @@ pip install flask requests
 ```Terminal
 mkdir -p /opt/zk_adms/logs
 ```
-Give ownership to frappe (optional but recommended):
+Give ownership to `frappe` (optional but recommended):
 ```Terminal
 sudo chown -R frappe:frappe /opt/zk_adms
 ```
 
 
-
-</details>
-
-
-> **Note:**  
-> Copy and paste Terminal.
-
----
-
-## <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" width="25"/> JavaScript Code
-
-<details>
-<summary><img src="https://img.icons8.com/color/48/000000/code-file.png" width="22"/> Copy JavaScript</summary>
-
-```javascript
-// Paste your JavaScript code here
-```
 </details>
 
 > **Note:**  
-> Copy and use the JavaScript snippet above.
+> Copy and paste in Terminal.
+> `frappe is a user`
 
 ---
+
 
 ## <img src="https://img.icons8.com/color/48/000000/python--v1.png" width="25"/> Python Server Script
+## ✔ STEP 4 — Create File adms_listener.py
 
 <details>
 <summary><img src="https://img.icons8.com/color/48/000000/code-file.png" width="22"/> Copy Python</summary>
 
 ```python
-# Paste your Python code here
+nano /opt/zk_adms/adms_listener.py
 ```
 </details>
 
