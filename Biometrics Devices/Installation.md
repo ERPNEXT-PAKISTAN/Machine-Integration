@@ -313,50 +313,17 @@ Dashboard: Device Status + Last Event
 are using the Minimal Working ADMS Script I provided earlier, and in that version the devices block is NOT visible, because the script auto-detects the device from the request (SN and IP) instead of requiring a device list.
 
 ---
+....
+##  ⏯️ ✔ your CURRENT SCRIPT (minimal version) does NOT need device IP     
 
-## <img src="https://img.icons8.com/fluency/48/code.png" width="25"/> Code Snippets
+Your current script works like this:    
 
-✔ But your CURRENT SCRIPT (minimal version) does NOT need device IP
-
-Your current script works like this:
-
-Device sends to:
-http://your-wsl-ip:5000/iclock/cdata?SN=xxx&table=ATTLOG
-Script captures:
-SN = serial number
-client_ip = device IP
-Script sends data to ERPNext using that info.
-So you do NOT need to configure IP anywhere.
+Device sends to:   
+http://your-wsl-ip:5000/iclock/cdata?SN=xxx&table=ATTLOG    
+Script captures:   
+SN = serial number    
+client_ip = device IP    
+Script sends data to ERPNext using that info.    
+So you do NOT need to configure IP anywhere.   
 
 ---
-
-- <img src="https://img.icons8.com/ios-filled/50/source-code.png" width="21"/> Source Code
-- <img src="https://img.icons8.com/fluency/48/copy.png" width="21"/> Copy
-- <img src="https://img.icons8.com/material-outlined/48/copy.png" width="21"/> Copy
-
----
-
-
-
-
-
-
-
-### ⭐ Star (emoji)
-### ✨ Sparkle (emoji)
-
-### <img src="https://img.icons8.com/fluency/48/star.png" width="24"/> Star (Icons8 - color)
-### <img src="https://img.icons8.com/fluency/48/star--v1.png" width="24"/> Star (Icons8 - filled)
-### <img src="https://img.icons8.com/ios/50/star--v1.png" width="24"/> Star (Icons8 - outline)
-
-### ▶️ Start (emoji play)
-### ⏯️ Play/Pause (emoji)
-
-### <img src="https://img.icons8.com/fluency/48/play.png" width="24"/> Play (Icons8)
-
-
-
-<!-- simple badge with star and number using Shields.io -->
-<img src="https://img.shields.io/badge/★-1-blue?style=flat-square" alt="star-1"/>
-<img src="https://img.shields.io/badge/★-2-green?style=flat-square" alt="star-2"/>
-<img src="https://img.shields.io/badge/★-3-orange?style=flat-square" alt="star-3"/>
