@@ -189,11 +189,11 @@ C:\Program Files\MySQL\MySQL Server 8.0\lib\libmysql.dll
 ```
 Database type: "MySQL"
 Configuration file: C:\Program Files\MySQL\MySQL Server 8.0\lib\libmysql.dll
-Server IP Address: "172.169.12.88"
+Server IP Address: "192.168.1.88"
 Port: "3306"
 Database Name: "hikvision"
 User Name: "frappe"
-User Password: "Master@4202"
+User Password: "Admin@123"
 ```
 ---
 
